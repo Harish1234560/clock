@@ -1,6 +1,7 @@
 let hr = document.getElementById('hour');
 let min = document.getElementById('min');
 let sec = document.getElementById('sec');
+let digitalTime = document.getElementById('digitalTime');
 
 function displayTime(){
     let date = new Date();
@@ -18,6 +19,7 @@ function displayTime(){
     min.style.transform = `rotate(${mRotation}deg)`;
     sec.style.transform = `rotate(${sRotation}deg)`;
 
+    digitalTime.textContent = `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}:${String(ss).padStart(2, '0')}`;
 }
 
 setInterval(displayTime, 1000);
